@@ -1,0 +1,92 @@
+                                    NOTES 
+
+open cv is the library which is written in python , c++ , java 
+it is the computer vision library where the functions are written 
+
+
+      READING AND WRITTING IMAGES IN OPEN CV 
+#### TO read image ---> we use cv.image() function , this function take path of the image and return the image a matrix of pixel 
+
+### TO display the image ----> we use the function cv.imread() function , this function display the image in new window and take two parameter name of the window and actual matrix of window which is image which is stored in the variable 
+
+### CV.waitKey(0) is the keyboard binding function . it wait for specific delay for the key to be presses , time is in milisecond 
+if we use 0 then it will wait for inf time 
+
+
+
+
+............................................................................
+HOW DATA IS STORED IN A VARIABLLE as IMAGE ??
+............................................................................
+
+
+
+When you store an image in a variable using OpenCV, the variable typically holds a NumPy array. In Python, OpenCV (Open Source Computer Vision Library) uses NumPy arrays to represent images.
+
+Here’s a brief overview of what you might expect:
+
+    Image Data Type: The variable will be of type numpy.ndarray. This array represents the image data in a matrix form.
+
+    Array Shape: The shape of the NumPy array depends on the type of image:
+        Grayscale Image: The array will have a shape of (height, width).
+        Color Image: For a color image, the array will have a shape of (height, width, channels), where channels is typically 3 for an RGB image.
+
+    Data Type: The data type of the array elements is usually uint8 (unsigned 8-bit integer) by default, meaning each pixel value ranges from 0 to 255.
+    
+  
+  
+
+........................................................................... 
+HOW ACTUALLY A IMAGE IS STORED IN NUMPY ARRAY ??
+...........................................................................
+
+
+
+he standard RGB format for images, pixel values are typically stored as unsigned 8-bit integers (uint8) in a NumPy array, and they range from 0 to 255. Here's a detailed explanation:
+RGB Pixel Values
+
+    RGB Format:
+        An RGB image represents each pixel using three color channels: Red, Green, and Blue.
+        Each channel's intensity is usually stored as an 8-bit value, which means each channel can have 256 different intensity levels, ranging from 0 to 255.
+
+    Data Type:
+        In a NumPy array, the pixel values are commonly stored as uint8 (unsigned 8-bit integer). This data type can represent values from 0 to 255.
+        For each pixel in an RGB image, this means there are three uint8 values representing the Red, Green, and Blue components.
+
+Example of RGB Image Representation
+
+Here's how a typical RGB image is represented in a NumPy array:
+
+    Shape: For an RGB image, the shape of the array is (height, width, 3), where 3 corresponds to the three color channels (R, G, B).
+
+    Pixel Values: Each pixel is represented by a triplet of values in the array, corresponding to the R, G, and B components.
+
+
+
+............................................................................
+HOW TO OPEN WEB CAMERA USING OPEN CV TO CAPTURE FRAMES ??
+............................................................................
+
+
+
+There is standard function of the open cv which can be used to capture the frame either from the webcam and you can also give the vedio path as well 
+
+cv.VedioCapture()
+
+argument = whole number or the file path 
+the number tell from which camera we need the frames for the web came the int is 0
+
+
+cv2.VideoCapture():
+
+    This constructor creates a VideoCapture object for accessing video files or cameras. It does not return a value directly, but it initializes an object that you can use to capture video frames.
+
+cap.read():
+
+    This function reads the next frame from the video stream.
+    Returns: A tuple where the first element is a boolean indicating whether the frame was successfully grabbed (True if successful, False otherwise), and the second element is the captured frame (an image array).
+ 
+............................................................................
+ord()
+this is particularly useful when you need to work with character encoding or perform operations that involve character values. 
+............................................................................       
