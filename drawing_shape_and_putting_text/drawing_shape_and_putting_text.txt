@@ -1,0 +1,46 @@
+                             NOTES 
+DRAWING SHAPE AND PUTTING TEXT ON THE SCREEN 
+
+IN THE FIRST PART OF THE CODE FIRST WE CREATE A BLANK SCRREN SO THAT WE CAN WORK ON IT 
+
+HERE WE USE THE FUNCTION OF NUMPY LIBRARY 
+
+............................................................................
+WE USE np.zeros((500,500) , dtype='uint8')
+............................................................................
+
+this function is creating a frame of 500X500 pixel where each pixel is denoted with 0 to get the black frame acc to thr RGB format 
+
+np.zeros Function
+
+The np.zeros function creates a new array of a specified shape and data type, with all elements initialized to zero. It is part of the numpy library, which provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
+
+Parameters
+
+    Shape: (500, 500)
+        This specifies the dimensions of the array. In this case, it creates a 2D array with 500 rows and 500 columns. The resulting array will have the shape (500, 500).
+
+    Data Type (dtype): 'uint8'
+        dtype stands for data type. 'uint8' stands for "unsigned 8-bit integer". It means each element in the array will be stored as an 8-bit unsigned integer, which can hold values from 0 to 255. This is often used for image data where pixel values are typically in this range.
+
+..................................................................................
+How to draw rectangle/shapes in the image
+............................................................................
+
+In order to draw rectangle on the image we use cv.rectange(_) function which take image , point1 , point2 , colour and thickness as the argument 
+
+and to fill the rectange use thickness = cv.FILLED or thickness = -1 
+
+.............................................................................
+How to Draw cicrcle 
+..............................................................................
+we use 
+cv.circle() in which the arguments are 
+image , center cordinates , radius , colour , thickness
+.............................................................................
+Write text on the image 
+.............................................................................
+uSE THE Function cv.putText() 
+which have the argument 
+as the cv.putText(blank , 'Hello' , (255,255), cv.FONT_HERSHEY_TRIPLEX , 1.0 , (0,0,255) , 2) as image , center cordinates , font , thickness , colour )
+
