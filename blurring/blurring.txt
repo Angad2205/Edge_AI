@@ -1,0 +1,35 @@
+.............................................................................
+Averaging techniques  - cv.blur()  img . kernel value
+............................................................................
+
+In this methord we define a kernel window whose dimensions will be odd and the middle pixel of the kernel frame will be the average of the intensities of the surrounding pixels and this window will iterate through out the original frame and make the whole frame blurr 
+
+for this methord we use the opencv function  blurr which take the parameters 
+
+img , and kernel window size (must be odd in number) # more the size of the kernel window the more blurr the picture will be 
+
+.............................................................................
+Gaussian Blurring    cv.GaussianBlurr() -- img , kernel value , int
+.............................................................................
+IN this type of blurring in the kernel windows the pixes were given a weight and the average of all those weight give the overall blurr on the center pixel of the kernel frame 
+
+the gausian blurr is slightly less compared to the average blurr at the same kernel window values and it look more realistic compared to Average blurring
+..............................................................................
+
+Median Blurr  --- cv.medianBlur() ---> cv.medianBlur(img , int) if kernel = 3X3 then the int will be 3 
+............................................................................
+It is similar as of the average blurr just the difference is that in median blurr instead of taking the average of the pixel we take the median of the intensities of the pixel and apply it to the center of the kernel frame 
+
+it is very effective in reducing the noice in the image and used in advance computer vision projects 
+
+median blurr is effective in low kernel sizes to reduce noise
+..............................................................................
+
+Bilateral BLUR ---> cvbilateralFilters(img , d , sigma color , sigma space)
+
+..............................................................................
+This type of blurring is very effective in the advace computer vision projects the main feature of this blurring is that it blur the image but retain the edges also 
+
+
+
+
