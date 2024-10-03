@@ -1,0 +1,69 @@
+Code Breakdown
+Import Libraries:
+
+python
+Copy code
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+NumPy: Used for numerical operations, especially with arrays.
+OpenCV: A powerful library for computer vision tasks.
+Matplotlib: A plotting library for displaying images and graphs.
+Read the Image:
+
+python
+Copy code
+img = cv2.imread('sudoku.jpeg')
+rows, cols, ch = img.shape
+The image 'sudoku.jpeg' is read into the variable img.
+img.shape retrieves the dimensions of the image:
+rows: Height of the image.
+cols: Width of the image.
+ch: Number of color channels (usually 3 for RGB images).
+Display the Image and Get Points:
+
+python
+Copy code
+plt.imshow(img)
+x = plt.ginput(4)
+print(x)
+plt.show()
+plt.imshow(img): Displays the image using Matplotlib.
+x = plt.ginput(4): Waits for the user to click four points on the displayed image. These points define the corners of a quadrilateral that will be transformed.
+print(x): Outputs the coordinates of the clicked points to the console.
+plt.show(): Displays the image until closed by the user.
+Define Source and Destination Points:
+
+python
+Copy code
+pts1 = np.float32([x[0], x[1], x[2], x[3]])
+pts2 = np.float32([[0, 0], [cols, 0], [0, rows], [cols, rows]])
+pts1: The four points clicked by the user, converted to a float32 array. These are the source points that correspond to the corners of the quadrilateral in the original image.
+pts2: A set of destination points that correspond to the corners of a rectangle in the output image:
+[0, 0]: Top-left corner.
+[cols, 0]: Top-right corner.
+[0, rows]: Bottom-left corner.
+[cols, rows]: Bottom-right corner.
+Compute Perspective Transformation Matrix:
+
+python
+Copy code
+M = cv2.getPerspectiveTransform(pts1, pts2)
+This function calculates the perspective transformation matrix M that maps the source points (pts1) to the destination points (pts2).
+Apply Perspective Transformation:
+
+python
+Copy code
+dst = cv2.warpPerspective(img, M, (cols, rows))
+This function applies the transformation matrix M to the original image img, producing a new image dst with the perspective transformation applied.
+The size of the output image is set to the original image's width and height.
+Display the Results:
+
+python
+Copy code
+plt.subplot(121), plt.imshow(img), plt.title('Input')
+plt.subplot(122), plt.imshow(dst), plt.title('Output')
+plt.show()
+plt.subplot(121): Creates a subplot for the input image.
+plt.subplot(122): Creates a subplot for the transformed output image.
+plt.show(): Displays both images side by side for comparison.
