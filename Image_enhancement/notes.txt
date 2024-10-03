@@ -1,0 +1,20 @@
+Logarithmic transformation is a nonlinear image enhancement technique used primarily to enhance the visibility of darker regions in an image. Here’s a detailed explanation of what it does and how it works:
+
+Purpose of Log Transform
+Enhances Dark Areas: Log transformation can make dark areas of an image more visible while compressing the range of brighter areas. This is particularly useful in images with a high dynamic range where details in darker regions might be lost.
+
+Reduces Contrast: It decreases the contrast among high-intensity pixel values while enhancing lower-intensity pixel values. This helps in bringing out details that are otherwise hard to see.
+
+Mathematical Definition
+The logarithmic transformation can be defined mathematically as:
+
+
+s=c⋅log(1+r)
+where:
+
+𝑠
+s is the output pixel value.
+𝑟
+r is the input pixel value (in the range of [0, 255] for an 8-bit image).
+𝑐
+c is a constant scaling factor that adjusts the output intensity.
