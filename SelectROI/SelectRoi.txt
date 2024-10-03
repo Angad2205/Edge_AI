@@ -1,0 +1,24 @@
+cv2.imread(img) =  will return numpy array with height width channels
+
+i is the image loaded using OpenCV (cv2.imread). In OpenCV, images are stored as NumPy arrays with the shape (height, width, channels), where the third dimension (channels) represents the color channels in BGR format (Blue, Green, Red).
+
+cv2.selectROI(img) = return tupple which define the rectangular area which contain x , y , width , height 
+
+SELCT ROI is an inbuilt function of OpenCV which opens a window that allows you to select a region of interest (ROI) from the image i. The ROI is a rectangular area defined by a tuple r containing (x, y, width, height) where:
+
+x: Horizontal start point.    ----> x+w
+y: Vertical start point.      ---- y+h
+width: Width of the selected region.
+height: Height of the selected regio
+
+i[r[1]:r[1]+r[3], r[0]:r[0]+r[2], 0] = 0  # Set the blue channel to 0
+i[r[1]:r[1]+r[3], r[0]:r[0]+r[2], 1] = 0  # Set the green channel to 0
+i[r[1]:r[1]+r[3], r[0]:r[0]+r[2], 2] = 255  # Set the red channel to 255
+
+r[1]:r[1]+r[3]: This selects the vertical range of pixels, from the starting y-coordinate (r[1]) to the ending y-coordinate (r[1] + r[3]), which is the height of the region.
+r[0]:r[0]+r[2]: This selects the horizontal range of pixels, from the starting x-coordinate (r[0]) to the ending x-coordinate (r[0] + r[2]), which is the width of the region.
+0: This is the index for the blue channel (since OpenCV uses BGR format). Setting this slice to 0 means setting all pixel values of the blue channel in the selected region to 0, effectively removing the blue color.
+
+i[r[1]:r[1]+r[3], r[0]:r[0]+r[2], 0] = 0 
+here i is used to dereference the image coordinated as the 
+r[0] , r[1] , r[2] , r[3] are just the coordinated but to access the image you need to dereference those coordinated 
