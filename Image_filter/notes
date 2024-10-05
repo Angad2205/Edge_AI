@@ -1,0 +1,25 @@
+Max Filter
+Use When:
+You want to enhance bright features in an image, such as highlights or edges.
+You're dealing with images that have lower-value noise (e.g., salt noise).
+You need to perform texture analysis or edge detection.
+Min Filter
+Use When:
+You want to preserve dark features while removing bright noise (e.g., salt noise).
+You need to reduce the size of bright regions in an image.
+You're working on background subtraction tasks where darker areas need emphasis.
+Median Filter
+Use When:
+You need to remove impulse noise (salt-and-pepper noise) while preserving edges and details.
+Smoothing is required without significant blurring, especially in medical or high-contrast images.
+You want to enhance overall image quality without losing important features.
+Mean Filter
+Use When:
+You want to reduce random noise in an image but can tolerate some blurriness.
+You’re intentionally looking to create a soft or blurred effect.
+The image quality is relatively good, and you're looking for slight smoothing.
+Summary
+Max Filter: For bright feature enhancement.
+Min Filter: For dark feature preservation.
+Median Filter: For noise reduction with edge preservation.
+Mean Filter: For general smoothing and blurring.
