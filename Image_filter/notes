@@ -27,3 +27,10 @@ Max Filter: For bright feature enhancement.
 Min Filter: For dark feature preservation.
 Median Filter: For noise reduction with edge preservation.
 Mean Filter: For general smoothing and blurring.
+
+For a blurred image, the most suitable filters from the list you provided are:
+
+1. Median Filter
+Why: It can help remove certain types of noise without overly blurring the image further. While it doesn’t directly deblur, it preserves edges better than the mean filter, which can be beneficial if the image is slightly blurred with noise.
+2. Mean Filter
+Why: This can smooth out some minor artifacts, but it may increase blurriness, so it's not the best choice for strong blur. It’s more suitable for noise reduction than for recovering sharpness.
