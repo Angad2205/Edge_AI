@@ -2,12 +2,12 @@ import cv2 as cv
 import numpy as np 
 
 def log_enh(image, c):
-    table = np.array([(np.log(i / 255 + 1) * c) * 255 for i in np.arange(0, 256)]).astype("uint8")
+    table = np.array([(np.log(i / 255 + 1) * c) * 255 for i in np.arange(0, 256)]).astype("uint8")   // c*log(i+1)
     return cv.LUT(image, table)
 
 def gamma_enh(image, gamma):
     inverse = 1 / gamma
-    table = np.array([(np.clip((i / 255) ** inverse, 0, 1) * 255) for i in np.arange(0, 256)]).astype("uint8")
+    table = np.array([(np.clip((i / 255) ** inverse, 0, 1) * 255) for i in np.arange(0, 256)]).astype("uint8")  // i^1/gamma
     return cv.LUT(image, table)
 
 # Read the image
